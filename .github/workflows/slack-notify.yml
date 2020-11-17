@@ -6,7 +6,7 @@ on:
       - "!dependabot/**"
   push:
     branches:
-      - "master" 
+      - "main" 
 
 name: Notify when a PR is created/updated
 
