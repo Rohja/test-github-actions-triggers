@@ -1,0 +1,19 @@
+# This is already working from a previous repo.
+on:
+  pull_request:
+    branches:
+      - "*"
+      - "!dependabot/**"
+
+name: Notify when a PR is created/updated
+
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: Rohja/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
